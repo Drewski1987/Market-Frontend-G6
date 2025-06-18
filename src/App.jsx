@@ -38,7 +38,7 @@ function App() {
     <>
       {/* <Navigation/> */}
       <Routes>
-        <Route path="/" element={<Login token={token} setToken={setToken}/>} />
+        <Route path="/users/login" element={<Login token={token} setToken={setToken}/>} />
 
         <Route path="/users/:id" element={<Account orders={orders} setOrders={setOrders}/>}/>
 
