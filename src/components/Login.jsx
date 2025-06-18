@@ -1,7 +1,12 @@
+import { useState } from "react";
+
+export default function Login ({setToken}) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    //API call recalls information and sets the token for the user
 
 
-function Login () {
-  
 
 return(
     <>
@@ -10,7 +15,7 @@ return(
     <label>
         Username: <input/>
     </label>
-    <label> password: <input/>
+    <label> Password: <input/>
          </label>
     <button> Submit </button>
 
@@ -19,6 +24,4 @@ return(
     </>
 
 )
-}
-
-export default Login;
+};
