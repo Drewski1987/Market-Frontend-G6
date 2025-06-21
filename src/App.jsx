@@ -4,9 +4,11 @@ import {Routes, Route, Navigate } from "react-router-dom";
 // import Product from "./components/Product";
 // import ProductList from "./components/ProductList"
 import Login from "./components/Login";
+import Register from "./components/Register";
+import Account from "./components/UserAccount";
 // import Navigation from "./components/Navigation";
 import "./App.css"
-import Account from "./components/UserAccount";
+
 
 function App() {
   const [token, setToken] = useState (null);
@@ -42,9 +44,10 @@ function App() {
 
         <Route path="/users/:id" element={<Account orders={orders} setOrders={setOrders}/>}/>
 
+        <Route path = "/users/register" element = {<Register/>}/>
+
         {/* <Route path="/products" element={<ProductList/>} />
         <Route path="/products/:id" element={<Product/>} />
-        <Route path="/register" element={<Login/>} />
         <Route path="*" element={<p>404: Page not found</p>} /> */}
       </Routes>
     </>

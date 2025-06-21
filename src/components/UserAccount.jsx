@@ -11,7 +11,7 @@ export default function Account(){
     //Fetch orders that match the user's token -> LINK GOES TO NOWHERE
     useEffect(()=>{
         const getOrders = async()=>{
-            const response = await fetch ("localhost:3000/", {
+            const response = await fetch ("http://localhost:3000/", {
                 headers: {Authorization: `Bearer ${token}`}
             })
             const result = await response.json();
@@ -25,7 +25,7 @@ export default function Account(){
     useEffect(()=>{
         async function getUserDetails(){
             try{
-                const response = await fetch ("localhost3000/users/:id", {
+                const response = await fetch ("http://localhost:3000/users/:id", {
                     headers: {Authorization: `Bearer ${token}`}
                 })
                 const results = await response.json();
