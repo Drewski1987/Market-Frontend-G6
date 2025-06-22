@@ -6,7 +6,7 @@ import {Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/UserAccount";
-// import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation";
 import "./App.css"
 
 
@@ -31,14 +31,14 @@ function App() {
     }
   },[]);
 
-  // const logout = () => {
-  //   setToken(null);
-  //   setUser(null);
-  // };
+  const logout = () => {
+    setToken(null);
+    setUser(null);
+  };
 
   return (
     <>
-      {/* <Navigation/> */}
+      <Navigation/>
       <Routes>
         <Route path="/users/login" element={<Login token={token} setToken={setToken}/>} />
 
