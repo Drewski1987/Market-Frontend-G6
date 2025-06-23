@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import {Routes, Route, Navigate } from "react-router-dom";
 // import Home from "./components/Home"
-// import Product from "./components/Product";
-// import ProductList from "./components/ProductList"
+import ProductDetail from "./components/ProductDetail";
+import ProductList from "./components/ProductList";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/UserAccount";
@@ -46,9 +46,9 @@ function App() {
 
         <Route path = "/users/register" element = {<Register/>}/>
 
-        {/* <Route path="/products" element={<ProductList/>} />
-        <Route path="/products/:id" element={<Product/>} />
-        <Route path="*" element={<p>404: Page not found</p>} /> */}
+        <Route path="/products" element={<ProductList/>} />
+        <Route path="/products/:id" element={<ProductDetail/>} />
+        <Route path="*" element={<p>404: Page not found</p>} />
       </Routes>
     </>
   );
