@@ -31,14 +31,12 @@ function App() {
     }
   },[]);
 
-  const logout = () => {
-    setToken(null);
-    setUser(null);
-  };
 
   return (
-    <>
-      <Navigation/>
+    <><div>  
+    <Navigation token={token} setToken={setToken}/>
+    </div>
+    
       <Routes>
         <Route path="/users/login" element={<Login token={token} setToken={setToken}/>} />
 
@@ -47,6 +45,7 @@ function App() {
         <Route path = "/users/register" element = {<Register/>}/>
 
         <Route path="/products" element={<ProductList/>} />
+
         <Route path="/products/:id" element={<ProductDetail/>} />
         <Route path="*" element={<p>404: Page not found</p>} />
       </Routes>

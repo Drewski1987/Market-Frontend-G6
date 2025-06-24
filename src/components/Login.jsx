@@ -17,7 +17,7 @@ async function handleSubmit (event){
             })
         });
         const result = await response.json();
-        setToken(result.token);
+        setToken(result);
     }catch(error){
         console.log(error)
     };
