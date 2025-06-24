@@ -21,7 +21,8 @@ export default function Products(){
   return (
     <>
       <div className="productGrid">
-        {products.map((product) => {
+        {products &&
+        products.map((product) => {
           <div key={product.id} className="productCard">
               {/* <img
                 src={product.strProductThumb}
