@@ -18,31 +18,32 @@ export default function Products(){
     fetchProducts();
   }, []);
 
+  console.log(products)
+
   return (
-    <>
       <div className="productGrid">
-        {products.map((product) => {
+        {products.map((product) => (
           <div key={product.id} className="productCard">
-              {/* <img
+              <img
                 src={product.strProductThumb}
                 alt={product.title}
                 className="productImg"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "../../public/GenericProductImg.png";
+                  e.target.src = '../../public/GenericProductImg.jpg';
                 }}
-              /> */}
+              />
               <div className="productDetails">
-                <h3 className="productTitle">{product.title}</h3>
-                <h4 className="productPrice">{product.price}</h4>
+                <Link to={`/products/${product.id}`}>
+                    <h3 className="productTitle">{product.title}</h3>
+                </Link>
+                <h4 className="productPrice">${product.price}</h4>
                 <p className="productDescription">
                   {product.description}
                 </p>
               </div>
-            <Link to={`/products/${product.id}`}></Link>
           </div>
-        })}  
+        ))}  
       </div>
-    </>
   );
 };

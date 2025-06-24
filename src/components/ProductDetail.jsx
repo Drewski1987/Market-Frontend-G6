@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function ProductDetail (){
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -19,24 +19,13 @@ export default function ProductDetail (){
     fetchProduct();
   }, [id]);
 
+  console.log(product)
+
   return (
     <div className="singleProductContainer">
-
-       <img/>
-      <h1 className="singleRecipeTitle">{recipe.strMeal}</h1>
-      <p className="singleRecipeCategory">
-        {recipe.strCategory} | {recipe.strArea}
-      </p>
-
-      <h2 className="singleRecipeTitle">Ingredients</h2>
-      <ul className="singleRecipeIngredients">
-        {recipe.ingredients.map((ingredient, idx) => (
-          <li key={idx}>{ingredient}</li>
-        ))}
-      </ul>
-
-      <h2 className="singleRecipeInstructionsTitle">Instructions</h2>
-      <p className="singleRecipeInstructions">{recipe.strInstructions}</p>
+                <h3 className="productTitle">{product.title}</h3>
+                <h4 className="productPrice">${product.price}</h4>
+                <p className="productDescription">{product.description}</p>
     </div>
   );
 };
