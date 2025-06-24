@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 
 
 
-function Navigation  ({Logout, token}) {
+function Navigation  ({token, setToken}) {
 
+    const logout = () => {
+        setToken("");
+        localStorage.clear(token)
+    };
 
     return (
        
@@ -21,7 +25,7 @@ function Navigation  ({Logout, token}) {
                     <Link to="/products/:id" className="navLink">
                     Products
                     </Link>
-                    <button onClick={Logout} className="navButton">Logout</button>
+                    <button onClick={logout} className="navButton">Logout</button>
                     </div>
                  : 
                     <div className="navItems">

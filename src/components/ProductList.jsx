@@ -7,7 +7,7 @@ export default function Products(){
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/products`);
+        const res = await fetch("http://localhost:3000/products");
         const data = await res.json();
         setProducts(data);
       } catch (err) {
@@ -21,7 +21,8 @@ export default function Products(){
   return (
     <>
       <div className="productGrid">
-        {products.map((product) => {
+        {products &&
+        products.map((product) => {
           <div key={product.id} className="productCard">
               {/* <img
                 src={product.strProductThumb}
