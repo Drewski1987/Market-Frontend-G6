@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 function Navigation  ({token, setToken}) {
 
-const logout = () => {
-    setToken("");
-    localStorage.clear(token)
-  };
+    const logout = () => {
+        setToken("");
+        localStorage.clear(token)
+    };
 
     return (
        

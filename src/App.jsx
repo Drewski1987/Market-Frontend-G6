@@ -33,8 +33,10 @@ function App() {
 
 
   return (
-    <>
-      <Navigation token={token} setToken={setToken}/>
+    <><div>  
+    <Navigation token={token} setToken={setToken}/>
+    </div>
+    
       <Routes>
         <Route path="/users/login" element={<Login token={token} setToken={setToken}/>} />
 
