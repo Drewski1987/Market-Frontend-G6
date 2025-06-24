@@ -34,8 +34,9 @@ export default function Products(){
               /> */}
               <div className="productDetails">
                 <h3 className="productTitle">{product.title}</h3>
-                <p className="productInfo">
-                  {recipe.strCategory} | {recipe.strArea}
+                <h4 className="productPrice">{product.price}</h4>
+                <p className="productDescription">
+                  {product.description}
                 </p>
               </div>
             <Link to={`/products/${product.id}`}></Link>
