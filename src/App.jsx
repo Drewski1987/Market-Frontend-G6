@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/UserAccount";
 import Navigation from "./components/Navigation";
+import Reviews from "./components/Reviews";
 import "./App.css"
 
 
@@ -45,6 +46,8 @@ function App() {
         <Route path = "/users/register" element = {<Register/>}/>
 
         <Route path="/products" element={<ProductList/>} />
+
+        <Route path="/reviews" element={<Reviews/>}/>
 
         <Route path="/products/:id" element={<ProductDetail/>} />
         <Route path="*" element={<Home/>} />
