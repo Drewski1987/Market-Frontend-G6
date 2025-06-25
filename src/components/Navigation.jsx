@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 function Navigation  ({token, setToken}) {
 
+    const storedUserId = localStorage.getItem("userId");
+
+
     const logout = () => {
         setToken("");
         localStorage.clear(token)
@@ -19,10 +22,10 @@ function Navigation  ({token, setToken}) {
                     <Link to="/" className="navLink">
                     Home
                     </Link>
-                    <Link to="/users/:id" className="navLink">
+                    <Link to={`/users/${(storedUserId)}`} className="navLink">
                     My Account
                     </Link>
-                    <Link to="/products/:id" className="navLink">
+                    <Link to="/products" className="navLink">
                     Products
                     </Link>
                     <button onClick={logout} className="navButton">Logout</button>

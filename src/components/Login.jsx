@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Login ({setToken}) {
+export default function Login ({setToken, setUserId}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -21,7 +21,18 @@ async function handleSubmit (event){
     }catch(error){
         console.log(error)
     };
-}
+    try {
+        const res = await fetch(`http://localhost:3000/users/login/getInfo/${username}`);
+        const data = await res.json();
+        console.log(data);
+        setUserId(data.id);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+
+
 
 
 return(
