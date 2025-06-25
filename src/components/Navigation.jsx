@@ -31,6 +31,10 @@ function Navigation  ({token, setToken, setUserId, userId}) {
                     Products
                     </Link>
 
+                    <Link to="/reviews" className="navLink">
+                    Reviews
+                    </Link>
+
                     <button onClick={logout} className="navButton">Logout</button>
                     </div>
                  : 
@@ -41,9 +45,12 @@ function Navigation  ({token, setToken, setUserId, userId}) {
                     Products
                     </Link>
 
+                    <Link to="/reviews" className="navLink">Reviews</Link>
+
                     <Link to="/users/login" className="navLink"> Login </Link>
                     
-                    <Link to="/users/register" className="navLink"> Register </Link>
+                    <Link to="/users/register" className="navLink"> Register </Link> 
+                    
                     </div>
                 }
             </>
