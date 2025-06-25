@@ -25,7 +25,7 @@ const [reviews, setReviews] = useState([]);
             <ul>
                 {reviews.map(review => (
                     <li key={review.id}>
-                        <Link to={`/products/${review.productId}`}>
+                        <Link to={`/products/${review.product_id}`}>
                             Product ID: {review.product_id} - "{review.comment}" (Rating: {review.rating})
                         </Link>
                     </li>
