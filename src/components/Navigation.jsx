@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 
 
 
-function Navigation  ({token, setToken}) {
-
-    const storedUserId = localStorage.getItem("userId");
+function Navigation  ({token, setToken, setUserId, userId}) {
 
 
     const logout = () => {
-        setToken("");
-        localStorage.clear(token)
+        setToken(null);
+        setUserId(null)
     };
 
     return (
@@ -23,7 +21,7 @@ function Navigation  ({token, setToken}) {
                     Home
                     </Link>
 
-                    <Link to={`/users/${(storedUserId)}`} className="navLink">
+                    <Link to={`/users/${(userId)}`} className="navLink">
                     My Account
                     </Link>
                     <Link to="/products" className="navLink">
