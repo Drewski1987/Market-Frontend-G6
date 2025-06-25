@@ -26,12 +26,13 @@ export default function Register(){
     };
     return (
         <>
-        <div className="registerForm">
 
-        <h2>Sign Up Here!</h2>
+        <h2 className="registerTitle">Sign Up Here!</h2>
+        <br/>
+        <div className="registerForm">
         {
             <form onSubmit={handleSubmit}>
-                <label>
+                <label className="userTitle">
                     Username: 
                         <input
                             name ="username"
@@ -41,7 +42,7 @@ export default function Register(){
                         />
                 </label>
                 <br/><br/>
-                <label>
+                <label className="passTitle">
                     Password: 
                         <input
                             name = "password"
@@ -50,7 +51,7 @@ export default function Register(){
                             value={password}
                         />
                 </label>
-
+                <br/><br/>
                 <button className = "button">Submit</button>
 
             </form>

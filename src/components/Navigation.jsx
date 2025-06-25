@@ -18,7 +18,9 @@ function Navigation  ({token, setToken}) {
            <>
             
                 {token ? 
+                    
                     <div className="navItems">
+
                     <Link to="/" className="navLink">
                     Home
                     </Link>
