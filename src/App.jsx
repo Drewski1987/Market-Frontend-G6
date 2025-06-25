@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {Routes, Route, Navigate } from "react-router-dom";
-// import Home from "./components/Home"
+import Home from "./components/Home"
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
 import Login from "./components/login";
@@ -64,7 +64,7 @@ function App() {
         <Route path="/products" element={<ProductList/>} />
 
         <Route path="/products/:id" element={<ProductDetail/>} />
-        <Route path="*" element={<p>404: Page not found</p>} />
+        <Route path="*" element={<Home/>} />
       </Routes>
     </>
   );
