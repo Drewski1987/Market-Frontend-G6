@@ -24,8 +24,12 @@ function Navigation  ({token, setToken}) {
                     </Link>
                     <Link to="/products/:id" className="navLink">
                     Products
+                    </Link
+                    ><Link to="/reviews" className="navLink">
+                    Reviews 
                     </Link>
                     <button onClick={logout} className="navButton">Logout</button>
+                    
                     </div>
                  : 
                     <div className="navItems">

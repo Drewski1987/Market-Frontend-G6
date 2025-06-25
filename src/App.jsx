@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/UserAccount";
 import Navigation from "./components/Navigation";
+import Reviews from "./components/Reviews.jsx";
 import "./App.css"
 
 
@@ -47,6 +48,9 @@ function App() {
         <Route path="/products" element={<ProductList/>} />
 
         <Route path="/products/:id" element={<ProductDetail/>} />
+
+        <Route path="/reviews" element={<Reviews/>}/>
+
         <Route path="*" element={<p>404: Page not found</p>} />
       </Routes>
     </>
