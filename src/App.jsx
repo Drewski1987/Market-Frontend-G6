@@ -45,7 +45,7 @@ function App() {
 
         <Route path = "/users/register" element = {<Register/>}/>
 
-        <Route path ="/orders" element = {<OrderForm/>}/>
+        <Route path ="/orders/:id" element = {<OrderForm/>}/>
 
         <Route path="/products" element={<ProductList/>} />
 

@@ -14,7 +14,7 @@ function OrderForm (){
     useEffect(()=> {
         const fetchOrder = async () => {
             try { 
-            const res = await fetch('http://localhost:3000/orders', {
+            const res = await fetch(`http://localhost:3000/orders/${id}`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -46,9 +46,9 @@ function OrderForm (){
         <div className="orderForm">
 
        <h3>Create Your Order</h3>
-      {/* {orders.length === 0 ? (
-        <p>You have yet to order any products.</p>
-      ) : (
+      
+        
+      
         <div>
           {orders.map((order) => (
             <div key={order.id}>
@@ -56,11 +56,11 @@ function OrderForm (){
               <h4>{order.date}</h4>
               <h4>{order.note}</h4>
             </div>
-          ))}
+))}
                 
         </div>    
-)
-} */}
+
+
 </div>
     )
 }
