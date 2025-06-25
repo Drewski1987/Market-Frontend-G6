@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {Routes, Route, Navigate } from "react-router-dom";
-import Home from "./components/Home"
+import Home from "./components/home"
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
 import Login from "./components/Login";
@@ -21,6 +21,8 @@ function App() {
   useEffect(() => {
     if (token) {
       localStorage.setItem("token", token)
+    }else{
+      localStorage.removeItem("token")
     }
   }, [token]);
 
@@ -37,6 +39,8 @@ function App() {
   useEffect(() => {
     if (userId) {
       localStorage.setItem("userId", userId)
+    }else{
+      localStorage.removeItem("userId")
     }
   }, [userId]);
 
@@ -52,7 +56,7 @@ function App() {
 
   return (
     <><div>  
-    <Navigation token={token} setToken={setToken}/>
+    <Navigation token={token} setToken={setToken} setUserId={setUserId} userId={userId}/>
     </div>
     
       <Routes>
