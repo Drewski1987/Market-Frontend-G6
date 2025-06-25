@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/UserAccount";
 import Navigation from "./components/Navigation";
+import OrderForm from "./components/OrderForm";
 import "./App.css"
 
 
@@ -43,6 +44,8 @@ function App() {
         <Route path="/users/:id" element={<Account orders={orders} setOrders={setOrders}/>}/>
 
         <Route path = "/users/register" element = {<Register/>}/>
+
+        <Route path ="/orders" element = {<OrderForm/>}/>
 
         <Route path="/products" element={<ProductList/>} />
 
