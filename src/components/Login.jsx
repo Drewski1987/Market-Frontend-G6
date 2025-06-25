@@ -26,9 +26,11 @@ async function handleSubmit (event){
 
 return(
     <>
-    <h2>Login Here!</h2>
+    <div className="login">
+    <h2 className="loginTitle">Login Here!</h2>
+    <br/>
     <form onSubmit={handleSubmit}>
-    <label>
+    <label className="userTitle">
         Username: <input className="usernameInput"
         name = "username"
         required
@@ -36,7 +38,7 @@ return(
         value={username}/>
     </label>
     <br/><br/>
-    <label> Password: <input
+    <label className="passTitle"> Password: <input
         className = "passwordInput"
         name="password"
         required
@@ -48,6 +50,7 @@ return(
 
     </form>
 
+    </div>
     </>
 
 )
