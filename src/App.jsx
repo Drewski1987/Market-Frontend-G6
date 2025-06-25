@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Account from "./components/userAccount";
 import Navigation from "./components/Navigation";
 import OrderForm from "./components/OrderForm";
+import Reviews from "./components/Reviews";
 import "./App.css"
 
 
@@ -69,6 +70,8 @@ function App() {
         <Route path ="/orders/:id" element = {<OrderForm token={token} setToken={setToken}/>}/>
 
         <Route path="/products" element={<ProductList/>} />
+
+        <Route path="/reviews" element={<Reviews/>} />
 
         <Route path="/products/:id" element={<ProductDetail/>} />
         <Route path="*" element={<Home/>} />
