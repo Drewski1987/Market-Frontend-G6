@@ -3,7 +3,7 @@ import {Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home"
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
-import Login from "./components/login";
+import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/userAccount";
 import Navigation from "./components/Navigation";
@@ -62,7 +62,7 @@ function App() {
 
         <Route path = "/users/register" element = {<Register/>}/>
 
-        <Route path ="/orders/:id" element = {<OrderForm/>}/>
+        <Route path ="/orders/:id" element = {<OrderForm token={token} setToken={setToken}/>}/>
 
         <Route path="/products" element={<ProductList/>} />
 

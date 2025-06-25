@@ -3,10 +3,10 @@ import {  useParams } from "react-router-dom";
 
 
 
-function OrderForm (){
+function OrderForm ({token}){
     const {id} = useParams()
-    const [orders, setOrders] = useState();
-    const token = localStorage.getItem("token");
+    const [orders, setOrders] = useState(null);
+    const currentToken = localStorage.getItem("token")
     
     
 
@@ -17,12 +17,12 @@ function OrderForm (){
             const res = await fetch(`http://localhost:3000/orders/${id}`, {
                 method: "GET",
                 headers: {
-                    "Authorization": `Bearer ${token}`
+                    "Authorization": `Bearer ${currentToken}`
                 }
             });
             const data = await res.json();
             console.log(data);
-            setOrders(data)
+            // setOrders(data)
            
             
     } catch (err) {
@@ -34,7 +34,7 @@ function OrderForm (){
 
     }, [id])
 
-    console.log(orders)
+    // console.log(orders)
    
     // const navigate = useNavigate
     // navigate("/")
@@ -50,13 +50,13 @@ function OrderForm (){
         
       
         <div>
-          {orders.map((order) => (
+          {/* {orders?.map((order) => (
             <div key={order.id}>
               <h4>{order.id}</h4>
               <h4>{order.date}</h4>
               <h4>{order.note}</h4>
             </div>
-))}
+))} */}
                 
         </div>    
 
