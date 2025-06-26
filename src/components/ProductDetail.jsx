@@ -42,9 +42,9 @@ console.log(review)
   return (
     <>
     <div className="singleProductContainer">
+        <h3 className="productTitle">{product.title}</h3>\
         <img className="productImg" src={product.imageurl}/>
         <div>
-          <h3 className="productTitle">{product.title}</h3>
           <Link to={`/orders/${userId}`}>
             <button>Order Here</button>
           </Link>    
@@ -56,7 +56,7 @@ console.log(review)
     <div className="reviews">
       {review.length > 0  ? 
       review.map((rev)=> (
-          <div key={rev.id} className="review">
+          <div key={rev.id} className="reviews">
             <ul>
               <li>
             <h5>"{rev.comment}"</h5>
