@@ -7,8 +7,7 @@ function OrderForm ({token}){
     const {id} = useParams()
     const [date, setdate] = useState('');
     const [note, setNote] = useState('');
-    
-    const userId = localStorage.getItem("userId")
+    const [user_id, setUser_id] = useState('');
     const currentToken = localStorage.getItem("token")
     
     
@@ -69,13 +68,13 @@ function OrderForm ({token}){
                 <input 
                 name = "user_id"
                 onChange={(e)=>setUser_id(e.target.value)}
-                value={userId}/>
+                value={user_id}/>
             </label>
             <br/><br/>
                <h4 className="orderLabel">*Please specify the item and quantity</h4> 
-               <Link to={`/users/${(userId)}`}>
+               
             <button>Submit</button>
-                </Link>
+                
             </form>
 
      
