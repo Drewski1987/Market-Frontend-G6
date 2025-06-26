@@ -1,28 +1,38 @@
 import {useEffect, useState} from "react"
-import {  useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 
 
 
 function OrderForm ({token}){
     const {id} = useParams()
-    const [orders, setOrders] = useState(null);
+    const [date, setdate] = useState('');
+    const [note, setNote] = useState('');
+    const [user_id, setUser_id] = useState('');
     const currentToken = localStorage.getItem("token")
     
     
 
-
-    useEffect(()=> {
-        const fetchOrder = async () => {
+    async function handleSubmit (event){
+        event.preventDefault();
+    
             try { 
             const res = await fetch(`http://localhost:3000/orders/${id}`, {
-                method: "GET",
+                method: "POST",
                 headers: {
+                    "Content-Type": "application/json",
                     "Authorization": `Bearer ${currentToken}`
-                }
+                },
+                body: JSON.stringify({
+                    date: date,
+                    note: note,
+                    user_id: user_id
+
+                }),
             });
+
             const data = await res.json();
             console.log(data);
-            // setOrders(data)
+            
            
             
     } catch (err) {
@@ -30,9 +40,19 @@ function OrderForm ({token}){
     } 
 };
     
-    fetchOrder();
+    // fetchOrder();
 
-    }, [id])
+    // }, [id])
+
+    // const navigate = useNavigate
+    // navigate("/users/:id")
+    
+    // const handleSubmit = async (date, note, user_id) => {
+
+    //     if (!orders){
+    //         return("There is no order")
+    //     }
+    // }
 
     // console.log(orders)
    
@@ -42,26 +62,64 @@ function OrderForm ({token}){
     
     return(
        
+        <>
         
         <div className="orderForm">
+            <form onSubmit={handleSubmit}>
+            <label> 
+                date: 
+                <input 
+                name = "date"
+                onChange={(e)=>setdate(e.target.value)}
+                value={date}/>
+            </label>
+            <br/><br/>
+             <label> 
+                Note: 
+                <input 
+                name = "note"
+                onChange={(e)=>setNote(e.target.value)}
+                value={note}/>
+            </label>
+            <br/><br/>
+             <label> 
+                User Id: 
+                <input 
+                name = "user_id"
+                onChange={(e)=>setUser_id(e.target.value)}
+                value={user_id}/>
+            </label>
+            <br/><br/>
 
-       <h3>Create Your Order</h3>
-      
+            <button>Submit</button>
+            </form>
+
+        </div>
         
+        
+        
+        
+        
+        </>
+//         <div className="orderForm">
+
+//        <h3>Create Your Order</h3>
       
-        <div>
-          {/* {orders?.map((order) => (
-            <div key={order.id}>
-              <h4>{order.id}</h4>
-              <h4>{order.date}</h4>
-              <h4>{order.note}</h4>
-            </div>
-))} */}
+//         <form>
+      
+//         <div>
+//           {orders?.map((order) => (
+//             <div key={order.id}>
+//               <h4>{order.id}</h4>
+//               <h4>{order.date}</h4>
+//               <h4>{order.note}</h4>
+//             </div>
+// ))}
                 
-        </div>    
+//         </div>    
+//         </form>
 
-
-</div>
+// </div>
     )
 }
 export default OrderForm
