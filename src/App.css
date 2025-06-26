@@ -61,9 +61,18 @@ body {
 }
 
 .productGrid{
-  
+  color:#fffaed;
+  display:block;
+  margin:15%;
 }
 
+.productCard{
+  padding: 20%;
+}
+
+.productTitle{
+  color:#a0c99f;
+}
 
 .registerTitle{
   font-family: Airplane;
@@ -73,4 +82,37 @@ body {
 
 .registerForm{
   color: #fffaed;
+}
+
+.reviewTitle{
+  color:#a0c99f;
+  font-family: Airplane;
+  font-size:200%;
+}
+
+.reviewLink, .reviews{
+  color:#fffaed;
+}
+
+.reviewItem{
+  margin:12%;
+  padding:3%;
+}
+
+.infoTitle{
+  color:#a0c99f;
+  font-family:Airplane;
+  font-size:200%;
+}
+.accountInfo{
+  color:#fffaed;
+}
+
+.order{
+  color:#fffaed;
+  margin: 5%;
+}
+
+.orderNote{
+  color:#a0c99f;
 }
