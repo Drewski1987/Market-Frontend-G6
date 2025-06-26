@@ -53,7 +53,7 @@ console.log(review)
         <p className="productDescription">{product.description}</p>
 
     </div>
-    <div>
+    <div className="reviews">
       {review.length > 0  ? 
       review.map((rev)=> (
           <div key={rev.id} className="review">

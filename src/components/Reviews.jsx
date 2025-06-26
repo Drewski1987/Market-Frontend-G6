@@ -51,19 +51,19 @@ console.log(rating)
     return (
 <>  
        {token ?
-        <div>
+        <div className="reviews">
             <form onSubmit={handleSubmit}>
-                <h2>Submit a Review</h2>
+                <h2 className="reviewTitle">Submit a Review</h2>
                 <label>
                     Product ID:
                     <input type="number" name="productId" onChange={(e) => setProductId(e.target.value)}required />
                 </label>
-                <br />
+                <br /><br/>
                 <label>
                     Comment:
                     <textarea name="comment" onChange={(e) => setComment(e.target.value)}required></textarea>
                 </label>
-                <br />
+                <br /><br/>
                 <label>
                     Rating:
                     <select name="rating" onChange={(e) => (setRating(e.target.value))}required>
@@ -74,7 +74,7 @@ console.log(rating)
                         <option value="5">5 Stars</option>
                     </select>
                 </label>
-                <br />
+                <br /><br/>
                 <button type="submit">Submit Review</button>
             </form>
        
@@ -92,15 +92,15 @@ console.log(rating)
         </div>
         </div>
         :
-        <div>
-            <h2>Please log in to submit a review.</h2>
-            <Link to="/users/login">Login</Link>
+        <div className="reviews">
+            <h2 className="reviewTitle">Please log in to submit a review.</h2>
+            <Link to="/users/login" className="reviewLink">Login</Link>
             
-            <h2>Product Reviews</h2>
+            <h2 className="reviewTitle">Product Reviews</h2>
             <ul>
                 {reviews.map(review => (
                     <li key={review.id}>
-                        <Link to={`/products/${review.product_id}`}>
+                        <Link to={`/products/${review.product_id}`} className="reviewLink">
                             Product ID: {review.product_id} - "{review.comment}" (Rating: {review.rating})
                         </Link>
                     </li>
