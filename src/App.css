@@ -63,8 +63,7 @@ body {
 .productGrid{
   color:#fffaed;
   display:block;
-  margin:15%;
-}
+  margin:5%;}
 
 .productCard{
   background-color: #a0c99f;
@@ -91,11 +90,6 @@ body {
   width: 50vw;
   height: auto;
   border-radius: 5vh;
-}
-
-
-.productCard{
-  padding: 20%;
 }
 
 .productTitle{
