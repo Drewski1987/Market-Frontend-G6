@@ -46,15 +46,15 @@ function OrderForm ({token}){
         
         <div className="orderForm">
             <form onSubmit={handleSubmit}>
-            <label> 
-                date: 
+            <label className="orderLabel"> 
+                Date: 
                 <input 
                 name = "date"
                 onChange={(e)=>setdate(e.target.value)}
                 value={date}/>
             </label>
             <br/><br/>
-             <label> 
+             <label className="orderLabel"> 
                 Note: 
                 <input 
                 name = "note"
@@ -62,7 +62,7 @@ function OrderForm ({token}){
                 value={note}/>
             </label>
             <br/><br/>
-             <label> 
+             <label className="orderLabel"> 
                 User Id: 
                 <input 
                 name = "user_id"
@@ -76,10 +76,6 @@ function OrderForm ({token}){
 
      
         </div>
-        
-        
-        
-        
         
         </>
     )

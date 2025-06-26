@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function ProductDetail (){
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [review, setReview] = useState([]);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -22,7 +23,24 @@ export default function ProductDetail (){
 
   console.log(product)
 
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const res = await fetch(`http://localhost:3000/reviews/${id}`);
+        const data = await res.json();
+        console.log(data)
+        setReview(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchReviews();
+  }, [id]);
+
   return (
+    <>
     <div className="singleProductContainer">
         <img className="productImg" src={product.imageurl}/>
         <div>
@@ -35,5 +53,17 @@ export default function ProductDetail (){
         <p className="productDescription">{product.description}</p>
 
     </div>
-  );
+    <div>
+      {review.comment ? (
+          <div key={review.product_id} className="review">
+            <h5>"{review.comment}"</h5>
+            <p>Rating: {review.rating}</p>
+          </div>
+      ) : (
+        <p>No reviews available for this product.</p>
+      )}
+    </div>
+
+  </>
+ );
 };

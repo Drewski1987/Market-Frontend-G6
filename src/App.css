@@ -60,6 +60,10 @@ body {
   color:#a0c99f;
 }
 
+.productGrid{
+  color:#fffaed;
+}
+
 .productCard{
   background-color: #a0c99f;
   color: #1b3a4d;
@@ -111,7 +115,7 @@ body {
 }
 
 .reviewItem{
-  margin:12%;
+  margin:5%;
   padding:3%;
 }
 
@@ -131,4 +135,8 @@ body {
 
 .orderNote{
   color:#a0c99f;
+}
+
+.orderLabel {
+  color:#fffaed;
 }
