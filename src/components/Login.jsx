@@ -17,7 +17,11 @@ async function handleSubmit (event){
             })
         });
         const result = await response.json();
-        setToken(result);
+        const invalidResults = ['Not authorized.', "Unable to login"];
+
+        if (!invalidResults.includes(result)) {
+          setToken(result);
+        };
     }catch(error){
         console.log(error)
     };

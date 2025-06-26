@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {Routes, Route, Navigate } from "react-router-dom";
-import Home from "./components/Home"
+import Home from "./components/home"
 import ProductDetail from "./components/ProductDetail";
 import ProductList from "./components/ProductList";
-import Login from "./components/Login";
+import Login from "./components/login";
 import Register from "./components/Register";
 import Account from "./components/userAccount";
 import Navigation from "./components/Navigation";
@@ -19,13 +19,15 @@ function App() {
   // const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
 
     //set token in localStorage
-  useEffect(() => {
-    if (token) {
-      localStorage.setItem("token", token)
-    }else{
-      localStorage.removeItem("token")
-    }
-  }, [token]);
+      useEffect(() => {
+        const invalidTokens = ['Not authorized.', "Unable to login"];
+
+        if (token && !invalidTokens.includes(token)) {
+          localStorage.setItem("token", token);
+        } else {
+          localStorage.removeItem("token");
+        }
+      }, [token]);
 
 
       //retrieve token from localStorage
@@ -38,7 +40,7 @@ function App() {
 
       //set user in localStorage
   useEffect(() => {
-    if (userId) {
+    if (token)  {
       localStorage.setItem("userId", userId)
     }else{
       localStorage.removeItem("userId")
