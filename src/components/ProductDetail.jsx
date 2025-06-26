@@ -6,7 +6,7 @@ export default function ProductDetail (){
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [review, setReview] = useState([]);
-
+  const userId = localStorage.getItem("userId")
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -45,7 +45,7 @@ export default function ProductDetail (){
         <img className="productImg" src={product.imageurl}/>
         <div>
           <h3 className="productTitle">{product.title}</h3>
-          <Link to={`/orders/${product.id}`}>
+          <Link to={`/orders/${userId}`}>
             <button>Order Here</button>
           </Link>    
         </div>
