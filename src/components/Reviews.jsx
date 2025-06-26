@@ -21,11 +21,11 @@ const [reviews, setReviews] = useState([]);
 
     return (
         <div className="reviews">
-            <h2>Product Reviews</h2>
+            <h2 className="reviewTitle">Product Reviews</h2>
             <ul>
                 {reviews.map(review => (
-                    <li key={review.id}>
-                        <Link to={`/products/${review.product_id}`}>
+                    <li key={review.id} className="reviewItem">
+                        <Link to={`/products/${review.product_id}`} className="reviewLink">
                             Product ID: {review.product_id} - "{review.comment}" (Rating: {review.rating})
                         </Link>
                     </li>

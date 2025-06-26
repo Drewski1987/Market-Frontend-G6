@@ -35,7 +35,7 @@ export default function Products(){
                 }}
               />
               <div className="productDetails">
-                <Link to={`/products/${product.id}`}>
+                <Link to={`/products/${product.id}`} className="productTitle">
                     <h3 className="productTitle">{product.title}</h3>
                 </Link>
                 <h4 className="productPrice">${product.price}</h4>
