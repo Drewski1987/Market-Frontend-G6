@@ -39,27 +39,7 @@ function OrderForm ({token}){
         console.error(err)
     } 
 };
-    
-    // fetchOrder();
-
-    // }, [id])
-
-    // const navigate = useNavigate
-    // navigate("/users/:id")
-    
-    // const handleSubmit = async (date, note, user_id) => {
-
-    //     if (!orders){
-    //         return("There is no order")
-    //     }
-    // }
-
-    // console.log(orders)
-   
-    // const navigate = useNavigate
-    // navigate("/")
-
-    
+        
     return(
        
         <>
@@ -101,25 +81,6 @@ function OrderForm ({token}){
         
         
         </>
-//         <div className="orderForm">
-
-//        <h3>Create Your Order</h3>
-      
-//         <form>
-      
-//         <div>
-//           {orders?.map((order) => (
-//             <div key={order.id}>
-//               <h4>{order.id}</h4>
-//               <h4>{order.date}</h4>
-//               <h4>{order.note}</h4>
-//             </div>
-// ))}
-                
-//         </div>    
-//         </form>
-
-// </div>
     )
 }
 export default OrderForm
