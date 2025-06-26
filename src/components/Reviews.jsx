@@ -7,7 +7,7 @@ const [reviews, setReviews] = useState([]);
 const[productId, setProductId] = useState(null);
 const [comment, setComment] = useState("");
 const [rating, setRating] = useState(1);
-
+console.log(rating)
     useEffect(()=>
         async function fetchReviews() {
             try {
@@ -33,9 +33,11 @@ const [rating, setRating] = useState(1);
                     "Authorization": `Bearer ${token}`
                 },
                 body:JSON.stringify({
-                    product_id: productId,
+                    rating: rating,
                     comment: comment,
-                    rating: rating
+                    product_id: productId
+                    
+                    
                 }),
             })
             const data = await res.json();
@@ -64,7 +66,7 @@ const [rating, setRating] = useState(1);
                 <br />
                 <label>
                     Rating:
-                    <select name="rating" onChange={(e) => setRating(e.target.value)}required>
+                    <select name="rating" onChange={(e) => (setRating(e.target.value))}required>
                         <option value="1">1 Star</option>
                         <option value="2">2 Stars</option>
                         <option value="3">3 Stars</option>
