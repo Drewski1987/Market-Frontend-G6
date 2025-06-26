@@ -27,6 +27,8 @@ export default function Products(){
                         
           <Link to={`/products/${product.id}`}>
           <div key={product.id} className="productCard">
+              <h3 className="productTitle">{product.title}</h3>
+
               <img
                 src={product.imageurl}
                 alt={product.title}
@@ -36,15 +38,6 @@ export default function Products(){
                   e.target.src = "/GenericProductImg.jpg"
                 }}
               />
-              <div className="productDetails">
-
-                    <h3 className="productTitle">{product.title}</h3>
-                
-                <h4 className="productPrice">${product.price}</h4>
-                <p className="productDescription">
-                  {product.description}
-                </p>
-              </div>
           </div>
         </Link>
         ))}  
