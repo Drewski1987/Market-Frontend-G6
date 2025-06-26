@@ -77,9 +77,13 @@ body {
 }
 
 .productCard > .productImg{
-  width: 80%;
+  max-width: 60vw;
+  max-height: 20vh;
   height: auto;
+  width: auto;
+  overflow: hidden;
   border-radius: 2vh;
+  border: #1b3a4d 5px solid
 }
 
 .singleProductContainer{
@@ -95,7 +99,7 @@ body {
 }
 
 .registerTitle{
-  font-family: Airplane;
+  font-family: Arial, Helvetica, sans-serif;
   color:#a0c99f;
   font-size: 200%;
 }
