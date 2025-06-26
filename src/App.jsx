@@ -73,7 +73,7 @@ function App() {
 
         <Route path="/products" element={<ProductList/>} />
 
-        <Route path="/reviews" element={<Reviews/>} />
+        <Route path="/reviews" element={<Reviews token={token}/>} />
 
         <Route path="/products/:id" element={<ProductDetail/>} />
         <Route path="*" element={<Home/>} />

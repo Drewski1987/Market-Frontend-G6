@@ -38,7 +38,7 @@ export default function ProductDetail (){
 
     fetchReviews();
   }, [id]);
-
+console.log(review)
   return (
     <>
     <div className="singleProductContainer">
@@ -54,15 +54,20 @@ export default function ProductDetail (){
 
     </div>
     <div>
-      {review.comment ? (
-          <div key={review.product_id} className="review">
-            <h5>"{review.comment}"</h5>
-            <p>Rating: {review.rating}</p>
-          </div>
-      ) : (
+      {review.length > 0  ? 
+      review.map((rev)=> (
+          <div key={rev.id} className="review">
+            <ul>
+              <li>
+            <h5>"{rev.comment}"</h5>
+            <p>Rating: {rev.rating}</p>
+            </li>
+            </ul>
+          </div>))
+        : 
         <p>No reviews available for this product.</p>
-      )}
-    </div>
+      }
+      </div>
 
   </>
  );
