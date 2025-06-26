@@ -56,7 +56,7 @@ console.log(review)
     <div>
       {review.length > 0  ? 
       review.map((rev)=> (
-          <div key={rev.id} className="reviews">
+          <div key={rev.id} className="review">
             <ul>
               <li>
             <h5>"{rev.comment}"</h5>
@@ -65,7 +65,7 @@ console.log(review)
             </ul>
           </div>))
         : 
-        <p style="color: #ffffff">No reviews available for this product.</p>
+        <p>No reviews available for this product.</p>
       }
       </div>
 
