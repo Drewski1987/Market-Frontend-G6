@@ -37,7 +37,7 @@ export default function ProductDetail (){
     };
 
     fetchReviews();
-  }, [id]);
+  }, []);
 console.log(review)
   return (
     <>
