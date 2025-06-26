@@ -52,6 +52,7 @@ export default function Account({orders, setOrders}){
         <div className="accountInfo">
             <h1 className="infoTitle">Account Info</h1>
             <p>Username: {userDetails.username}</p>
+            <p>User Id Number: {username.id}</p>
         </div>
 
 
