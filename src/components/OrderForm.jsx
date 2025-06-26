@@ -55,7 +55,8 @@ function OrderForm ({token}){
             </label>
             <br/><br/>
              <label className="orderLabel"> 
-                Note: 
+                *Note: 
+                
                 <input 
                 name = "note"
                 onChange={(e)=>setNote(e.target.value)}
@@ -70,7 +71,7 @@ function OrderForm ({token}){
                 value={user_id}/>
             </label>
             <br/><br/>
-
+               <h4 className="orderLabel">*Please specify the item and quantity</h4> 
             <button>Submit</button>
             </form>
 
