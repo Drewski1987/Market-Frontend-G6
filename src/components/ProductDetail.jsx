@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductDetail (){
   const { id } = useParams();
@@ -23,9 +24,16 @@ export default function ProductDetail (){
 
   return (
     <div className="singleProductContainer">
-                <h3 className="productTitle">{product.title}</h3>
-                <h4 className="productPrice">${product.price}</h4>
-                <p className="productDescription">{product.description}</p>
+        <img className="productImg" src={product.imageurl}/>
+        <div>
+          <h3 className="productTitle">{product.title}</h3>
+          <Link to={`/orders/${product.id}`}>
+            <button>Order Here</button>
+          </Link>    
+        </div>
+        <h4 className="productPrice">${product.price}</h4>
+        <p className="productDescription">{product.description}</p>
+
     </div>
   );
 };
