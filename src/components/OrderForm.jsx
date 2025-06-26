@@ -71,26 +71,10 @@ function OrderForm ({token}){
             </label>
             <br/><br/>
 
-<<<<<<< fixOrderForm
             <button>Submit</button>
             </form>
-=======
-       <h3>Create Your Order</h3>
-      
-        
-      
-        {/* <div>
-          {orders?.map((order) => (
-            <div key={order.id}>
-              <h4>{order.id}</h4>
-              <h4>{order.date}</h4>
-              <h4>{order.note}</h4>
-            </div>
-))}
-                
-        </div>     */}
->>>>>>> main
 
+     
         </div>
         
         
