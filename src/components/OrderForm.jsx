@@ -77,10 +77,6 @@ function OrderForm ({token}){
      
         </div>
         
-        
-        
-        
-        
         </>
     )
 }
