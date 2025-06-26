@@ -56,7 +56,7 @@ console.log(review)
     <div>
       {review.length > 0  ? 
       review.map((rev)=> (
-          <div key={rev.id} className="review">
+          <div key={rev.id} className="reviews">
             <ul>
               <li>
             <h5>"{rev.comment}"</h5>
