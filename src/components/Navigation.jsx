@@ -37,7 +37,7 @@ function Navigation  ({token, setToken, setUserId, userId}) {
                     Reviews
                     </Link>
 
-                    <button onClick={logout} className="navButton">Logout</button>
+                    <button onClick={logout} className="button">Logout</button>
                     </div>
                  : 
                     <div className="navItems">
