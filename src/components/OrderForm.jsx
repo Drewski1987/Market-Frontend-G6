@@ -1,50 +1,80 @@
 import {useEffect, useState} from "react"
-import {  useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 
 
 
 function OrderForm ({token}){
     const {id} = useParams()
-    const [orders, setOrders] = useState(null);
+    const [date, setdate] = useState('');
+    const [note, setNote] = useState('');
+    const [user_id, setUser_id] = useState('');
     const currentToken = localStorage.getItem("token")
     
     
 
-
-    useEffect(()=> {
-        const fetchOrder = async () => {
+    async function handleSubmit (event){
+        event.preventDefault();
+    
             try { 
             const res = await fetch(`http://localhost:3000/orders/${id}`, {
-                method: "GET",
+                method: "POST",
                 headers: {
+                    "Content-Type": "application/json",
                     "Authorization": `Bearer ${currentToken}`
-                }
+                },
+                body: JSON.stringify({
+                    date: date,
+                    note: note,
+                    user_id: user_id
+
+                }),
             });
+
             const data = await res.json();
             console.log(data);
-            // setOrders(data)
+            
            
             
     } catch (err) {
         console.error(err)
     } 
 };
-    
-    fetchOrder();
-
-    }, [id])
-
-    // console.log(orders)
-   
-    // const navigate = useNavigate
-    // navigate("/")
-
-    
+        
     return(
        
+        <>
         
         <div className="orderForm">
+            <form onSubmit={handleSubmit}>
+            <label> 
+                date: 
+                <input 
+                name = "date"
+                onChange={(e)=>setdate(e.target.value)}
+                value={date}/>
+            </label>
+            <br/><br/>
+             <label> 
+                Note: 
+                <input 
+                name = "note"
+                onChange={(e)=>setNote(e.target.value)}
+                value={note}/>
+            </label>
+            <br/><br/>
+             <label> 
+                User Id: 
+                <input 
+                name = "user_id"
+                onChange={(e)=>setUser_id(e.target.value)}
+                value={user_id}/>
+            </label>
+            <br/><br/>
 
+<<<<<<< fixOrderForm
+            <button>Submit</button>
+            </form>
+=======
        <h3>Create Your Order</h3>
       
         
@@ -59,9 +89,15 @@ function OrderForm ({token}){
 ))}
                 
         </div>     */}
+>>>>>>> main
 
-
-</div>
+        </div>
+        
+        
+        
+        
+        
+        </>
     )
 }
 export default OrderForm
