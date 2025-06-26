@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import {  useNavigate, useParams } from "react-router-dom";
+import {  Link, useNavigate, useParams } from "react-router-dom";
 
 
 
@@ -7,7 +7,8 @@ function OrderForm ({token}){
     const {id} = useParams()
     const [date, setdate] = useState('');
     const [note, setNote] = useState('');
-    const [user_id, setUser_id] = useState('');
+    
+    const userId = localStorage.getItem("userId")
     const currentToken = localStorage.getItem("token")
     
     
@@ -68,11 +69,13 @@ function OrderForm ({token}){
                 <input 
                 name = "user_id"
                 onChange={(e)=>setUser_id(e.target.value)}
-                value={user_id}/>
+                value={userId}/>
             </label>
             <br/><br/>
                <h4 className="orderLabel">*Please specify the item and quantity</h4> 
+               <Link to={`/users/${(userId)}`}>
             <button>Submit</button>
+                </Link>
             </form>
 
      
