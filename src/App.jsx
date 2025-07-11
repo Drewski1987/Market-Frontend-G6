@@ -58,7 +58,8 @@ function App() {
 
 
   return (
-    <><div>  
+    <>
+    <div>  
     <Navigation token={token} setToken={setToken} setUserId={setUserId} userId={userId}/>
     </div>
     
